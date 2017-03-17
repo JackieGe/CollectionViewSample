@@ -12,4 +12,7 @@
 - (void)setLabelText:(NSString *)text;
 
 - (NSString *)text;
+
+- (void)endEdidting;
+
 @end

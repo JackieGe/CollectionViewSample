@@ -87,7 +87,7 @@
     NSLog(@"MyViewText = %@", self.myView.text);
 }
 
-- (void)dealloc {    
+- (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
@@ -160,6 +160,28 @@
     [self presentViewController:alert animated:YES completion:^{
         NSLog(@"Alert pops");
     }];
+
+}
+
+#pragma mark -- touch
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    NSLog(@"Touch began");
+    [self.myView endEdidting];
+}
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    NSLog(@"Touch ended");
+   
+}
+
+- (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    NSLog(@"Touch cancelled");
+
+}
+
+- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    NSLog(@"Touch moved");
 
 }
 

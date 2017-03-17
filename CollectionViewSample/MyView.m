@@ -38,6 +38,10 @@
     return self;
 }
 
+- (void)endEdidting {
+    [self.textField resignFirstResponder];
+}
+
 #pragma mark -- implement MyView.h
 - (void)setLabelText:(NSString *)text {
     self.label.text = text;
@@ -63,5 +67,12 @@
     
     return YES;
 }
+
+#pragma mark -- touch
+- (void) touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.textField resignFirstResponder];
+}
+
+
 
 @end
