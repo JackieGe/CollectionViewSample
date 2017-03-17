@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[ViewController collectionView:numberOfItemsInSection:]:ViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = " [self.events count] / COL_NUM">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ViewController collectionView:cellForItemAtIndexPath:]:ViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.events[0]">
+            </PersistentString>
+            <PersistentString
+               value = "indexPath.section * COL_NUM + indexPath.row">
+            </PersistentString>
+            <PersistentString
+               value = "event[@&quot;name&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
