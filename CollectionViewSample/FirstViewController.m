@@ -8,11 +8,17 @@
 
 #import "FirstViewController.h"
 #import "SecondViewController.h"
+#import "ThirdViewController.h"
 #import "AnimatedViewController.h"
 #import "WebViewController.h"
 #import "MyView.h"
+#import "MyButton.h"
 
 @interface FirstViewController ()
+{
+    @private
+    ThirdViewController *third;
+}
 
 @property (nonatomic, strong) MyView *myView;
 
@@ -24,7 +30,7 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor redColor];
-    
+    /*
     UIButton *button1 = [UIButton buttonWithType:UIButtonTypeCustom];
     button1.backgroundColor = [UIColor yellowColor];
     button1.frame = CGRectMake(10, 50, 200, 120);
@@ -39,6 +45,11 @@
     [button1 setImage:[UIImage imageNamed:@"archery.gif"] forState:UIControlStateNormal];
     [self.view addSubview:button1];
     
+    [button1 addTarget:self action:@selector(jump) forControlEvents:UIControlEventTouchUpInside];
+     */
+    
+    MyButton *button1 = [MyButton myButtonWithFrame:CGRectMake(10, 50, 200, 120) title:@"Click me" imageName:@"archery.gif"];
+    [self.view addSubview:button1];
     [button1 addTarget:self action:@selector(jump) forControlEvents:UIControlEventTouchUpInside];
     
     
@@ -81,6 +92,10 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(printMyViewText) name:UIKeyboardDidHideNotification object:nil];
     // Do any additional setup after loading the view.
+    
+    MyButton *button4 = [MyButton myButtonWithFrame:CGRectMake(10, 550, 200, 120) title:@"move ball" imageName:@"archery.gif"];
+    [self.view addSubview:button4];
+    [button4 addTarget:self action:@selector(openToMoveBall) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void) printMyViewText {
@@ -94,12 +109,12 @@
 - (void)jump {
     NSLog(@"start to jump");
     
-    /*
+    
     SecondViewController *second = [[SecondViewController alloc] init];
     second.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     [self presentViewController:second animated:YES completion:^{
         NSLog(@"finished jump");
-    }];*/
+    }];
     
     /*
     AnimatedViewController *animited = [[AnimatedViewController alloc] init];
@@ -108,12 +123,28 @@
         NSLog(@"jumped to animated view");
     }];*/
     
+    /*
     WebViewController *web = [[WebViewController alloc] init];
     web.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     [self presentViewController:web animated:YES completion:^{
         NSLog(@"jumped to web controller");
     }];
+    */
+}
+
+- (void)openToMoveBall {
     
+    static dispatch_once_t once;
+    dispatch_once(&once, ^{
+         third = [[ThirdViewController alloc] init];
+    });
+    
+    if(third) {
+        third.modalTransitionStyle = UIModalTransitionStylePartialCurl;
+        [self presentViewController:third animated:YES completion:^{
+            NSLog(@"Jump to move to ball");
+        }];
+    }
 }
 
 - (void)showAlert {

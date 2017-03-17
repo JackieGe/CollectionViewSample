@@ -29,6 +29,9 @@
 		8C3BE6B71E79349A00474B42 /* canoe-slalom.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8C3BE6AE1E79349A00474B42 /* canoe-slalom.gif */; };
 		8C3BE6B81E79349A00474B42 /* canoe-sprint.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8C3BE6AF1E79349A00474B42 /* canoe-sprint.gif */; };
 		8C3BE6B91E79349A00474B42 /* events.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C3BE6B01E79349A00474B42 /* events.plist */; };
+		8CB73D4C1E7C1393008A61FF /* MyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB73D4B1E7C1393008A61FF /* MyButton.m */; };
+		8CB73D4F1E7C1BEE008A61FF /* MyBallView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB73D4E1E7C1BEE008A61FF /* MyBallView.m */; };
+		8CB73D521E7C1DBE008A61FF /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB73D511E7C1DBE008A61FF /* ThirdViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +67,12 @@
 		8C3BE6AE1E79349A00474B42 /* canoe-slalom.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "canoe-slalom.gif"; sourceTree = "<group>"; };
 		8C3BE6AF1E79349A00474B42 /* canoe-sprint.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "canoe-sprint.gif"; sourceTree = "<group>"; };
 		8C3BE6B01E79349A00474B42 /* events.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = events.plist; sourceTree = "<group>"; };
+		8CB73D4A1E7C1393008A61FF /* MyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyButton.h; sourceTree = "<group>"; };
+		8CB73D4B1E7C1393008A61FF /* MyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyButton.m; sourceTree = "<group>"; };
+		8CB73D4D1E7C1BEE008A61FF /* MyBallView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBallView.h; sourceTree = "<group>"; };
+		8CB73D4E1E7C1BEE008A61FF /* MyBallView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBallView.m; sourceTree = "<group>"; };
+		8CB73D501E7C1DBE008A61FF /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		8CB73D511E7C1DBE008A61FF /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,12 +121,18 @@
 				8C0473701E7ABEB6002FF93D /* FirstViewController.m */,
 				8C0473721E7ABEC0002FF93D /* SecondViewController.h */,
 				8C0473731E7ABEC0002FF93D /* SecondViewController.m */,
+				8CB73D501E7C1DBE008A61FF /* ThirdViewController.h */,
+				8CB73D511E7C1DBE008A61FF /* ThirdViewController.m */,
+				8C2EA91E1E7B5C950033A5D6 /* MyView.h */,
+				8C2EA91F1E7B5C950033A5D6 /* MyView.m */,
+				8CB73D4D1E7C1BEE008A61FF /* MyBallView.h */,
+				8CB73D4E1E7C1BEE008A61FF /* MyBallView.m */,
+				8CB73D4A1E7C1393008A61FF /* MyButton.h */,
+				8CB73D4B1E7C1393008A61FF /* MyButton.m */,
 				8C0473751E7AC845002FF93D /* AnimatedViewController.h */,
 				8C0473761E7AC845002FF93D /* AnimatedViewController.m */,
 				8C0473781E7AD374002FF93D /* WebViewController.h */,
 				8C0473791E7AD374002FF93D /* WebViewController.m */,
-				8C2EA91E1E7B5C950033A5D6 /* MyView.h */,
-				8C2EA91F1E7B5C950033A5D6 /* MyView.m */,
 				8C04737A1E7AD374002FF93D /* WebViewController.xib */,
 			);
 			path = CollectionViewSample;
@@ -231,6 +246,7 @@
 			files = (
 				8C0473741E7ABEC0002FF93D /* SecondViewController.m in Sources */,
 				8C3BE6921E79126F00474B42 /* ViewController.m in Sources */,
+				8CB73D521E7C1DBE008A61FF /* ThirdViewController.m in Sources */,
 				8C2EA9201E7B5C950033A5D6 /* MyView.m in Sources */,
 				8C3BE6A31E7912D100474B42 /* EventCollectionViewCell.m in Sources */,
 				8C04737B1E7AD374002FF93D /* WebViewController.m in Sources */,
@@ -238,6 +254,8 @@
 				8C0473711E7ABEB6002FF93D /* FirstViewController.m in Sources */,
 				8C3BE68F1E79126F00474B42 /* AppDelegate.m in Sources */,
 				8C3BE68C1E79126F00474B42 /* main.m in Sources */,
+				8CB73D4F1E7C1BEE008A61FF /* MyBallView.m in Sources */,
+				8CB73D4C1E7C1393008A61FF /* MyButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
