@@ -13,6 +13,7 @@
 #import "WebViewController.h"
 #import "MyView.h"
 #import "MyButton.h"
+#import "ImageViewController.h"
 
 @interface FirstViewController ()
 {
@@ -96,6 +97,10 @@
     MyButton *button4 = [MyButton myButtonWithFrame:CGRectMake(10, 550, 200, 120) title:@"move ball" imageName:@"archery.gif"];
     [self.view addSubview:button4];
     [button4 addTarget:self action:@selector(openToMoveBall) forControlEvents:UIControlEventTouchUpInside];
+    
+    MyButton *btnOpenImage = [MyButton myButtonWithFrame:CGRectMake(220, 50, 150, 120) title:@"Open Image" imageName:@"archery.gif"];
+    [self.view addSubview:btnOpenImage];
+    [btnOpenImage addTarget:self action:@selector(openImage) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void) printMyViewText {
@@ -145,6 +150,14 @@
             NSLog(@"Jump to move to ball");
         }];
     }
+}
+
+- (void)openImage {
+    ImageViewController *imageVC = [[ImageViewController alloc] init];
+    imageVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:imageVC animated:YES completion:^{
+        NSLog(@"open image");
+    }];
 }
 
 - (void)showAlert {
@@ -197,22 +210,27 @@
 #pragma mark -- touch
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSLog(@"Touch began");
+    // NSLog(@"Touch began");
+    UITouch *touch = [touches anyObject];
+    
+    CGPoint point = [touch preciseLocationInView:self.view];
+     // CGPoint point = [touch locationInView:self];
+    
     [self.myView endEdidting];
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSLog(@"Touch ended");
+    // NSLog(@"Touch ended");
    
 }
 
 - (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSLog(@"Touch cancelled");
+    // NSLog(@"Touch cancelled");
 
 }
 
 - (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSLog(@"Touch moved");
+    // NSLog(@"Touch moved");
 
 }
 

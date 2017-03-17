@@ -32,6 +32,7 @@
 		8CB73D4C1E7C1393008A61FF /* MyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB73D4B1E7C1393008A61FF /* MyButton.m */; };
 		8CB73D4F1E7C1BEE008A61FF /* MyBallView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB73D4E1E7C1BEE008A61FF /* MyBallView.m */; };
 		8CB73D521E7C1DBE008A61FF /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB73D511E7C1DBE008A61FF /* ThirdViewController.m */; };
+		8CB73D551E7C259F008A61FF /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB73D541E7C259F008A61FF /* ImageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,8 @@
 		8CB73D4E1E7C1BEE008A61FF /* MyBallView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBallView.m; sourceTree = "<group>"; };
 		8CB73D501E7C1DBE008A61FF /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
 		8CB73D511E7C1DBE008A61FF /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
+		8CB73D531E7C259F008A61FF /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
+		8CB73D541E7C259F008A61FF /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +128,8 @@
 				8CB73D511E7C1DBE008A61FF /* ThirdViewController.m */,
 				8C2EA91E1E7B5C950033A5D6 /* MyView.h */,
 				8C2EA91F1E7B5C950033A5D6 /* MyView.m */,
+				8CB73D531E7C259F008A61FF /* ImageViewController.h */,
+				8CB73D541E7C259F008A61FF /* ImageViewController.m */,
 				8CB73D4D1E7C1BEE008A61FF /* MyBallView.h */,
 				8CB73D4E1E7C1BEE008A61FF /* MyBallView.m */,
 				8CB73D4A1E7C1393008A61FF /* MyButton.h */,
@@ -249,6 +254,7 @@
 				8CB73D521E7C1DBE008A61FF /* ThirdViewController.m in Sources */,
 				8C2EA9201E7B5C950033A5D6 /* MyView.m in Sources */,
 				8C3BE6A31E7912D100474B42 /* EventCollectionViewCell.m in Sources */,
+				8CB73D551E7C259F008A61FF /* ImageViewController.m in Sources */,
 				8C04737B1E7AD374002FF93D /* WebViewController.m in Sources */,
 				8C0473771E7AC845002FF93D /* AnimatedViewController.m in Sources */,
 				8C0473711E7ABEB6002FF93D /* FirstViewController.m in Sources */,
