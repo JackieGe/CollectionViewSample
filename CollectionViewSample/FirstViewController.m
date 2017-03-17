@@ -14,6 +14,8 @@
 
 @interface FirstViewController ()
 
+@property (nonatomic, strong) MyView *myView;
+
 @end
 
 @implementation FirstViewController
@@ -73,10 +75,20 @@
     
     [button3 addTarget:self action:@selector(showActionSheet) forControlEvents:UIControlEventTouchUpInside];
     
-    MyView *myView = [[MyView alloc] initWithFrame:CGRectMake(10, 500, 300, 50)];
-    [myView setLabelText:@"Name"];
-    [self.view addSubview:myView];
+    _myView = [[MyView alloc] initWithFrame:CGRectMake(10, 500, 300, 50)];
+    [_myView setLabelText:@"Name"];
+    [self.view addSubview:_myView];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(printMyViewText) name:UIKeyboardDidHideNotification object:nil];
     // Do any additional setup after loading the view.
+}
+
+- (void) printMyViewText {
+    NSLog(@"MyViewText = %@", self.myView.text);
+}
+
+- (void)dealloc {    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)jump {
