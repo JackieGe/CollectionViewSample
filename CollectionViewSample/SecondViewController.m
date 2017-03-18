@@ -9,7 +9,9 @@
 #import "SecondViewController.h"
 
 @interface SecondViewController ()
-
+{
+    UITextField *textField;
+}
 @end
 
 @implementation SecondViewController
@@ -36,8 +38,45 @@
     [self.view addSubview:button1];
     
     [button1 addTarget:self action:@selector(jumpBack) forControlEvents:UIControlEventTouchUpInside];
+    
+    textField = [[UITextField alloc] initWithFrame:CGRectMake(20, 200, 100, 30)];
+    textField.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:textField];
+    
+    UISwitch *sw = [[UISwitch alloc] initWithFrame:CGRectMake(20, 250, 0, 0)];
+    /*
+    sw.tintColor = [UIColor yellowColor];
+    sw.onTintColor = [UIColor redColor];
+    sw.thumbTintColor = [UIColor redColor];
+    */
+    
+    [self.view addSubview:sw];
+    [sw addTarget:self action:@selector(changeSwitch:) forControlEvents:UIControlEventValueChanged];
+    
+    UISlider *slider = [[UISlider alloc] initWithFrame:CGRectMake(20, 300, 200, 30)];
+    slider.thumbTintColor = [UIColor redColor];
+    slider.maximumTrackTintColor = [UIColor lightGrayColor];
+    slider.minimumTrackTintColor = [UIColor redColor];
+    slider.minimumValue = 0;
+    slider.maximumValue = 1000;
+    [slider addTarget:self action:@selector(slideMe:) forControlEvents:UIControlEventValueChanged];
+    [self.view addSubview:slider];
 
     // Do any additional setup after loading the view.
+}
+
+- (void)slideMe:(UISlider *)slider {
+    NSLog(@"%f",slider.value);
+}
+
+- (void)changeSwitch:(UISwitch *)sw {
+    /*
+    if (sw.on) {
+        [textField setEnabled:YES];
+    } else {
+        [textField setEnabled:NO];
+    }*/
+    textField.enabled = sw.on;
 }
 
 - (void)jumpBack {
