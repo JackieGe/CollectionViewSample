@@ -19,6 +19,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(20, 500, 80, 30);
+    button.backgroundColor = [UIColor greenColor];
+    [button setTitle:@"BACK" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(backToMainView) forControlEvents:UIControlEventTouchUpInside];
+    button.layer.borderColor = [UIColor redColor].CGColor;
+    button.layer.borderWidth = 2;
+    button.layer.cornerRadius = 5;
+    button.layer.masksToBounds = YES;
+    [self.view addSubview:button];
+
     // Do any additional setup after loading the view.
     
     UIImageView *imageV =  [[UIImageView alloc] initWithFrame:CGRectMake(20, 50, 400, 400)];
@@ -133,6 +145,13 @@
             break;
             
     }
+}
+
+- (void)backToMainView {
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

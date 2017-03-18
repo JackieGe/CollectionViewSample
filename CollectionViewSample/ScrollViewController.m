@@ -80,24 +80,34 @@
 #pragma mark - UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    int pageNum = scrollView.contentOffset.x / width;
-    NSLog(@"current #page: %d", pageNum);
+    // int pageNum = scrollView.contentOffset.x / width;
+    // NSLog(@"current #page: %d", pageNum);
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     NSLog(@"begin dragging");
+    int pageNum = scrollView.contentOffset.x / width;
+    NSLog(@"current #page: %d", pageNum + 1);
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     NSLog(@"End dragging");
+    int pageNum = scrollView.contentOffset.x / width;
+    NSLog(@"current #page: %d", pageNum + 1);
+
 }
 
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
     NSLog(@"begin decelerating");
+    int pageNum = scrollView.contentOffset.x / width;
+    NSLog(@"current #page: %d", pageNum + 1);
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     NSLog(@"end decelerating");
+    int pageNum = scrollView.contentOffset.x / width;
+    NSLog(@"current #page: %d", pageNum + 1);
+
 }
 /*
 #pragma mark - Navigation
