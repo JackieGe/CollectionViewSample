@@ -21,7 +21,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    UIImageView *imageV =  [[UIImageView alloc] initWithFrame:CGRectMake(20, 50, 200, 200)];
+    UIImageView *imageV =  [[UIImageView alloc] initWithFrame:CGRectMake(20, 50, 400, 400)];
     UIImage *image =[UIImage imageNamed:@"badminton.gif"];
     imageV.image = image;
     [self.view addSubview:imageV];
@@ -50,6 +50,54 @@
     [imageV addGestureRecognizer:swipeDown];
     
     
+    // pinch 缩放
+    UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchMe:)];
+    [imageV addGestureRecognizer:pinch];
+    
+    // pan 拖拽
+    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panMe:)];
+    [imageV addGestureRecognizer:pan];
+    
+    // rotate 旋转
+    
+    UIRotationGestureRecognizer *rotation = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotateMe:)];
+    [imageV addGestureRecognizer:rotation];
+    
+}
+
+- (void)rotateMe:(UIRotationGestureRecognizer *)rotation {
+    // get view
+    UIImageView *imageV = (UIImageView *)rotation.view;
+    
+    // tranform
+    imageV.transform = CGAffineTransformRotate(imageV.transform, rotation.rotation);
+    
+    // reset rotation
+    rotation.rotation = 0;
+}
+
+- (void)panMe:(UIPanGestureRecognizer *)pan {
+    // 获取view
+    UIImageView *imageV = (UIImageView *)pan.view;
+    
+    // 获取新的位置
+    CGPoint point = [pan translationInView:imageV];
+    
+    // 变换矩阵
+    imageV.transform = CGAffineTransformTranslate(imageV.transform, point.x, point.y);
+    
+    //
+    [pan setTranslation:CGPointZero inView:imageV];
+}
+
+- (void)pinchMe:(UIPinchGestureRecognizer *)pinch {
+    // 获取缩放手势所指视图， 这里我们缩放的是Image View （因为我们把pinch 手势添加到了Image View）
+    UIImageView *imageV = (UIImageView *)pinch.view;
+    // 矩阵变换：改变image V的 tansform，这里是长宽等比例缩放
+    imageV.transform = CGAffineTransformScale(imageV.transform, pinch.scale, pinch.scale);
+    // 重要： 缩放比例参照原始图片的大小， 否则缩放的速度将会愈来愈快（指数级） 而非线性的。
+    pinch.scale = 1;
+    // 提示： 按住Alt （option）键，模拟器上会出现两个圆圈，按住鼠标左键移动，即可缩放。
 }
 
 - (void)tapMe {
