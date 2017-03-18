@@ -11,6 +11,8 @@
 @interface ScrollViewController () <UIScrollViewDelegate>
 {
     int width;
+    UIScrollView *scrollView;
+    UIPageControl *pageControl;
 }
 @end
 
@@ -33,7 +35,7 @@
     
     width = 200;
     CGFloat heigh = 200;
-    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(20, 50, width, heigh)];
+    scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(20, 50, width, heigh)];
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"events" ofType:@"plist"];
     NSArray *array = [NSArray arrayWithContentsOfFile:plistPath];
     scrollView.contentSize = CGSizeMake(width * array.count, heigh);
@@ -52,16 +54,31 @@
         i++;
     }
     
+    int defaultPageNum = 2;
+    
     scrollView.pagingEnabled = YES;
-    scrollView.contentOffset = CGPointMake(width * (3 - 1), 0);
+    scrollView.contentOffset = CGPointMake(width * defaultPageNum, 0);
     scrollView.indicatorStyle = UIScrollViewIndicatorStyleWhite;
     scrollView.showsHorizontalScrollIndicator = NO;
     scrollView.showsVerticalScrollIndicator = NO;
     
     scrollView.delegate = self;
+    
+    pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(40, 280, 200, 30)];
+    pageControl.currentPageIndicatorTintColor = [UIColor greenColor];
+    pageControl.pageIndicatorTintColor = [UIColor redColor];
+    [self.view addSubview:pageControl];
+    [pageControl addTarget:self action:@selector(changePage:) forControlEvents:UIControlEventValueChanged];
+    pageControl.numberOfPages = array.count;
+    pageControl.currentPage = defaultPageNum;
+    pageControl.backgroundColor = [UIColor yellowColor];
     // scrollView.bounces = NO;
 
     // Do any additional setup after loading the view.
+}
+
+- (void)changePage:(UIPageControl *)pageC {
+    [scrollView setContentOffset:CGPointMake(width * pageC.currentPage, 0) animated:YES];
 }
 
 - (void)backToMainView {
@@ -105,9 +122,9 @@
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     NSLog(@"end decelerating");
-    int pageNum = scrollView.contentOffset.x / width;
-    NSLog(@"current #page: %d", pageNum + 1);
-
+    NSInteger pageNum = scrollView.contentOffset.x / width;
+    NSLog(@"current #page: %zd", pageNum + 1);
+    pageControl.currentPage = pageNum;
 }
 /*
 #pragma mark - Navigation
