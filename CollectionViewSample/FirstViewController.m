@@ -14,6 +14,7 @@
 #import "MyView.h"
 #import "MyButton.h"
 #import "ImageViewController.h"
+#import "SegmentViewController.h"
 
 @interface FirstViewController ()
 {
@@ -101,6 +102,19 @@
     MyButton *btnOpenImage = [MyButton myButtonWithFrame:CGRectMake(220, 50, 150, 120) title:@"Open Image" imageName:@"archery.gif"];
     [self.view addSubview:btnOpenImage];
     [btnOpenImage addTarget:self action:@selector(openImage) forControlEvents:UIControlEventTouchUpInside];
+    
+    MyButton *btnOpenSegmentView = [MyButton myButtonWithFrame:CGRectMake(220, 200, 150, 120) title:@"Seg" imageName:@"archery.gif"];
+    [self.view addSubview:btnOpenSegmentView];
+    [btnOpenSegmentView addTarget:self action:@selector(openSegmentView) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)openSegmentView {
+    SegmentViewController *segment = [[SegmentViewController alloc] init];
+    segment.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self presentViewController:segment animated:YES completion:^{
+        
+        
+    }];
 }
 
 - (void) printMyViewText {
