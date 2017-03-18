@@ -9,6 +9,9 @@
 #import "ImageViewController.h"
 
 @interface ImageViewController ()
+{
+    long count;;
+}
 
 @end
 
@@ -29,10 +32,59 @@
     [imageV addGestureRecognizer:tap];
     
     
+    //long press
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressMe:)];
+    longPress.minimumPressDuration = 3;
+    longPress.allowableMovement = 10;
+    [imageV addGestureRecognizer:longPress];
+    
+    count = 0;
+    
+    // swipe
+    UISwipeGestureRecognizer *swipeUp = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeMe:)];
+    swipeUp.direction = UISwipeGestureRecognizerDirectionUp;
+    [imageV addGestureRecognizer:swipeUp];
+    
+    UISwipeGestureRecognizer *swipeDown = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeMe:)];
+    swipeDown.direction = UISwipeGestureRecognizerDirectionDown;
+    [imageV addGestureRecognizer:swipeDown];
+    
+    
 }
 
 - (void)tapMe {
     NSLog(@"tap me");
+}
+
+- (void)longPressMe:(UILongPressGestureRecognizer *)longPress {
+    switch (longPress.state) {
+        case UIGestureRecognizerStateBegan:
+            NSLog(@"Long press began");
+            break;
+        case UIGestureRecognizerStateChanged:
+            count++;
+            NSLog(@"Long press changed @ %ld", count);
+            break;
+        case UIGestureRecognizerStateEnded:
+            NSLog(@"Long press ended");
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)swipeMe:(UISwipeGestureRecognizer *)swipe {
+    switch (swipe.direction) {
+        case UISwipeGestureRecognizerDirectionUp:
+            NSLog(@"Swipe up");
+            break;
+        case UISwipeGestureRecognizerDirectionDown:
+            NSLog(@"Swipe down");
+            break;
+        default:
+            break;
+            
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,5 +101,13 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+    NSLog(@"Motion began");
+}
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+    NSLog(@"Motion ended");
+}
 
 @end
