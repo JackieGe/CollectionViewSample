@@ -15,6 +15,7 @@
 #import "MyButton.h"
 #import "ImageViewController.h"
 #import "SegmentViewController.h"
+#import "ScrollViewController.h"
 
 @interface FirstViewController ()
 {
@@ -106,6 +107,18 @@
     MyButton *btnOpenSegmentView = [MyButton myButtonWithFrame:CGRectMake(220, 200, 150, 120) title:@"Seg" imageName:@"archery.gif"];
     [self.view addSubview:btnOpenSegmentView];
     [btnOpenSegmentView addTarget:self action:@selector(openSegmentView) forControlEvents:UIControlEventTouchUpInside];
+    
+    MyButton *btnOpenScrollView = [MyButton myButtonWithFrame:CGRectMake(220, 350, 150, 120) title:@"scroll" imageName:@"archery.gif"];
+    [self.view addSubview:btnOpenScrollView];
+    [btnOpenScrollView addTarget:self action:@selector(openScrollView) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)openScrollView {
+    ScrollViewController *scroll = [[ScrollViewController alloc] init];
+    scroll.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentViewController:scroll animated:YES completion:^{
+        
+    }];
 }
 
 - (void)openSegmentView {

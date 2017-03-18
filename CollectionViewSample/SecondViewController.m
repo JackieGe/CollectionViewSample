@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.view.backgroundColor = [UIColor greenColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     
     UIButton *button1 = [UIButton buttonWithType:UIButtonTypeCustom];
     button1.backgroundColor = [UIColor yellowColor];
@@ -54,11 +54,12 @@
     [sw addTarget:self action:@selector(changeSwitch:) forControlEvents:UIControlEventValueChanged];
     
     UISlider *slider = [[UISlider alloc] initWithFrame:CGRectMake(20, 300, 200, 30)];
-    slider.thumbTintColor = [UIColor redColor];
-    slider.maximumTrackTintColor = [UIColor lightGrayColor];
-    slider.minimumTrackTintColor = [UIColor redColor];
+    slider.thumbTintColor = [UIColor whiteColor];
+    slider.maximumTrackTintColor = [UIColor whiteColor];
+    slider.minimumTrackTintColor = [UIColor greenColor];
     slider.minimumValue = 0;
     slider.maximumValue = 1000;
+    slider.backgroundColor = [UIColor yellowColor];
     [slider addTarget:self action:@selector(slideMe:) forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:slider];
 

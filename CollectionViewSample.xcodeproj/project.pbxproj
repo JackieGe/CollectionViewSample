@@ -30,6 +30,7 @@
 		8C3BE6B81E79349A00474B42 /* canoe-sprint.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8C3BE6AF1E79349A00474B42 /* canoe-sprint.gif */; };
 		8C3BE6B91E79349A00474B42 /* events.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C3BE6B01E79349A00474B42 /* events.plist */; };
 		8C4032371E7CFCA30060ACA1 /* SegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4032361E7CFCA30060ACA1 /* SegmentViewController.m */; };
+		8C40323A1E7D1DE70060ACA1 /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4032391E7D1DE70060ACA1 /* ScrollViewController.m */; };
 		8CB73D4C1E7C1393008A61FF /* MyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB73D4B1E7C1393008A61FF /* MyButton.m */; };
 		8CB73D4F1E7C1BEE008A61FF /* MyBallView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB73D4E1E7C1BEE008A61FF /* MyBallView.m */; };
 		8CB73D521E7C1DBE008A61FF /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB73D511E7C1DBE008A61FF /* ThirdViewController.m */; };
@@ -71,6 +72,8 @@
 		8C3BE6B01E79349A00474B42 /* events.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = events.plist; sourceTree = "<group>"; };
 		8C4032351E7CFCA30060ACA1 /* SegmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentViewController.h; sourceTree = "<group>"; };
 		8C4032361E7CFCA30060ACA1 /* SegmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentViewController.m; sourceTree = "<group>"; };
+		8C4032381E7D1DE70060ACA1 /* ScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollViewController.h; sourceTree = "<group>"; };
+		8C4032391E7D1DE70060ACA1 /* ScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewController.m; sourceTree = "<group>"; };
 		8CB73D4A1E7C1393008A61FF /* MyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyButton.h; sourceTree = "<group>"; };
 		8CB73D4B1E7C1393008A61FF /* MyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyButton.m; sourceTree = "<group>"; };
 		8CB73D4D1E7C1BEE008A61FF /* MyBallView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBallView.h; sourceTree = "<group>"; };
@@ -127,6 +130,8 @@
 				8C0473701E7ABEB6002FF93D /* FirstViewController.m */,
 				8C0473721E7ABEC0002FF93D /* SecondViewController.h */,
 				8C0473731E7ABEC0002FF93D /* SecondViewController.m */,
+				8C4032381E7D1DE70060ACA1 /* ScrollViewController.h */,
+				8C4032391E7D1DE70060ACA1 /* ScrollViewController.m */,
 				8CB73D501E7C1DBE008A61FF /* ThirdViewController.h */,
 				8CB73D511E7C1DBE008A61FF /* ThirdViewController.m */,
 				8C2EA91E1E7B5C950033A5D6 /* MyView.h */,
@@ -254,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C40323A1E7D1DE70060ACA1 /* ScrollViewController.m in Sources */,
 				8C4032371E7CFCA30060ACA1 /* SegmentViewController.m in Sources */,
 				8C0473741E7ABEC0002FF93D /* SecondViewController.m in Sources */,
 				8C3BE6921E79126F00474B42 /* ViewController.m in Sources */,
