@@ -7,6 +7,7 @@
 //
 
 #import "ImageViewController.h"
+#import "ScrollViewController.h"
 
 @interface ImageViewController ()
 {
@@ -20,6 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.title = @"精彩图片";
+    
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(20, 500, 80, 30);
     button.backgroundColor = [UIColor greenColor];
@@ -30,6 +33,18 @@
     button.layer.cornerRadius = 5;
     button.layer.masksToBounds = YES;
     [self.view addSubview:button];
+    
+    UIButton *button2 = [UIButton buttonWithType:UIButtonTypeCustom];
+    button2.frame = CGRectMake(140, 500, 80, 30);
+    button2.backgroundColor = [UIColor greenColor];
+    [button2 setTitle:@"滚动图库" forState:UIControlStateNormal];
+    [button2 addTarget:self action:@selector(goToScorllImage) forControlEvents:UIControlEventTouchUpInside];
+    button2.layer.borderColor = [UIColor redColor].CGColor;
+    button2.layer.borderWidth = 2;
+    button2.layer.cornerRadius = 5;
+    button2.layer.masksToBounds = YES;
+    [self.view addSubview:button2];
+
 
     // Do any additional setup after loading the view.
     
@@ -75,6 +90,11 @@
     UIRotationGestureRecognizer *rotation = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotateMe:)];
     [imageV addGestureRecognizer:rotation];
     
+}
+
+- (void)goToScorllImage {
+    ScrollViewController *scroll = [[ScrollViewController alloc] init];
+    [self.navigationController pushViewController:scroll animated:YES];
 }
 
 - (void)rotateMe:(UIRotationGestureRecognizer *)rotation {

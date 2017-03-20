@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "FirstViewController.h"
+#import "ImageViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,9 +18,28 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
     FirstViewController *first = [[FirstViewController alloc] init];
-    self.window.rootViewController = first;
+    UINavigationController *homeNav = [[UINavigationController alloc] initWithRootViewController:first];
+    homeNav.tabBarItem.title = @"Home";
+    homeNav.tabBarItem.badgeColor = [UIColor redColor];
+    homeNav.tabBarItem.selectedImage = [[UIImage imageNamed:@"Home-1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    homeNav.tabBarItem.image = [UIImage imageNamed:@"Home-2"];
+    
+    ImageViewController *imageVC = [[ImageViewController alloc] init];
+    UINavigationController *imageNav = [[UINavigationController alloc] initWithRootViewController:imageVC];
+    imageNav.tabBarItem.title = @"Photo";
+    imageNav.tabBarItem.selectedImage = [[UIImage imageNamed:@"Pic-1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    imageNav.tabBarItem.image = [UIImage imageNamed:@"Pic-2"];
+    
+    UITabBarController *tab = [[UITabBarController alloc] init];
+    tab.viewControllers = @[homeNav, imageNav];
+    
+    [UINavigationBar appearance].barTintColor = [UIColor greenColor];
+    [UINavigationBar appearance].translucent = NO;
+    
+    // Override point for customization after application launch.
+    self.window.rootViewController = tab;
     return YES;
 }
 

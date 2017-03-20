@@ -22,6 +22,8 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
+    self.navigationItem.title = @"滚动图片";
+    
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(20, 500, 80, 30);
     button.backgroundColor = [UIColor greenColor];

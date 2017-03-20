@@ -35,6 +35,10 @@
 		8CB73D4F1E7C1BEE008A61FF /* MyBallView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB73D4E1E7C1BEE008A61FF /* MyBallView.m */; };
 		8CB73D521E7C1DBE008A61FF /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB73D511E7C1DBE008A61FF /* ThirdViewController.m */; };
 		8CB73D551E7C259F008A61FF /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB73D541E7C259F008A61FF /* ImageViewController.m */; };
+		8CB74FA21E80114E00E2EE7B /* Pic-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CB74F9E1E80114E00E2EE7B /* Pic-2.png */; };
+		8CB74FA31E80114E00E2EE7B /* Pic-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CB74F9F1E80114E00E2EE7B /* Pic-1.png */; };
+		8CB74FA41E80114E00E2EE7B /* Home-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CB74FA01E80114E00E2EE7B /* Home-2.png */; };
+		8CB74FA51E80114E00E2EE7B /* Home-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CB74FA11E80114E00E2EE7B /* Home-1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +86,10 @@
 		8CB73D511E7C1DBE008A61FF /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 		8CB73D531E7C259F008A61FF /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		8CB73D541E7C259F008A61FF /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
+		8CB74F9E1E80114E00E2EE7B /* Pic-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pic-2.png"; sourceTree = "<group>"; };
+		8CB74F9F1E80114E00E2EE7B /* Pic-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pic-1.png"; sourceTree = "<group>"; };
+		8CB74FA01E80114E00E2EE7B /* Home-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home-2.png"; sourceTree = "<group>"; };
+		8CB74FA11E80114E00E2EE7B /* Home-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home-1.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +122,7 @@
 		8C3BE6891E79126F00474B42 /* CollectionViewSample */ = {
 			isa = PBXGroup;
 			children = (
+				8CB74FA61E80116200E2EE7B /* Images */,
 				8C3BE6A71E79349A00474B42 /* Olympics_Pic */,
 				8C3BE68D1E79126F00474B42 /* AppDelegate.h */,
 				8C3BE68E1E79126F00474B42 /* AppDelegate.m */,
@@ -175,6 +184,17 @@
 				8C3BE6B01E79349A00474B42 /* events.plist */,
 			);
 			path = Olympics_Pic;
+			sourceTree = "<group>";
+		};
+		8CB74FA61E80116200E2EE7B /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				8CB74F9E1E80114E00E2EE7B /* Pic-2.png */,
+				8CB74F9F1E80114E00E2EE7B /* Pic-1.png */,
+				8CB74FA01E80114E00E2EE7B /* Home-2.png */,
+				8CB74FA11E80114E00E2EE7B /* Home-1.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,12 +259,16 @@
 				8C3BE69A1E79126F00474B42 /* LaunchScreen.storyboard in Resources */,
 				8C3BE6B41E79349A00474B42 /* basketball.gif in Resources */,
 				8C3BE6B61E79349A00474B42 /* boxing.gif in Resources */,
+				8CB74FA31E80114E00E2EE7B /* Pic-1.png in Resources */,
+				8CB74FA21E80114E00E2EE7B /* Pic-2.png in Resources */,
+				8CB74FA41E80114E00E2EE7B /* Home-2.png in Resources */,
 				8C04737C1E7AD374002FF93D /* WebViewController.xib in Resources */,
 				8C3BE6B21E79349A00474B42 /* athletics.gif in Resources */,
 				8C3BE6B81E79349A00474B42 /* canoe-sprint.gif in Resources */,
 				8C3BE6B11E79349A00474B42 /* archery.gif in Resources */,
 				8C3BE6B71E79349A00474B42 /* canoe-slalom.gif in Resources */,
 				8C3BE6B31E79349A00474B42 /* badminton.gif in Resources */,
+				8CB74FA51E80114E00E2EE7B /* Home-1.png in Resources */,
 				8C3BE6971E79126F00474B42 /* Assets.xcassets in Resources */,
 				8C3BE6B51E79349A00474B42 /* beach-volleyball.gif in Resources */,
 				8C3BE6951E79126F00474B42 /* Main.storyboard in Resources */,

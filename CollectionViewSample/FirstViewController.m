@@ -33,6 +33,8 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor redColor];
+    
+    self.navigationItem.title = @"欢迎来到首页";
     /*
     UIButton *button1 = [UIButton buttonWithType:UIButtonTypeCustom];
     button1.backgroundColor = [UIColor yellowColor];
@@ -51,14 +53,14 @@
     [button1 addTarget:self action:@selector(jump) forControlEvents:UIControlEventTouchUpInside];
      */
     
-    MyButton *button1 = [MyButton myButtonWithFrame:CGRectMake(10, 50, 200, 120) title:@"Click me" imageName:@"archery.gif"];
+    MyButton *button1 = [MyButton myButtonWithFrame:CGRectMake(10, 10, 200, 120) title:@"Click me" imageName:@"archery.gif"];
     [self.view addSubview:button1];
     [button1 addTarget:self action:@selector(jump) forControlEvents:UIControlEventTouchUpInside];
     
     
     UIButton *button2 = [UIButton buttonWithType:UIButtonTypeCustom];
     button2.backgroundColor = [UIColor yellowColor];
-    button2.frame = CGRectMake(10, 200, 200, 120);
+    button2.frame = CGRectMake(10, 150, 200, 120);
     [button2 setTitle:@"Click me" forState:UIControlStateNormal];
     [button2 setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [button2 setContentHorizontalAlignment:UIControlContentHorizontalAlignmentRight];
@@ -75,7 +77,7 @@
     
     UIButton *button3 = [UIButton buttonWithType:UIButtonTypeCustom];
     button3.backgroundColor = [UIColor yellowColor];
-    button3.frame = CGRectMake(10, 350, 200, 120);
+    button3.frame = CGRectMake(10, 290, 200, 120);
     [button3 setTitle:@"Click me" forState:UIControlStateNormal];
     [button3 setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [button3 setContentHorizontalAlignment:UIControlContentHorizontalAlignmentRight];
@@ -89,26 +91,26 @@
     
     [button3 addTarget:self action:@selector(showActionSheet) forControlEvents:UIControlEventTouchUpInside];
     
-    _myView = [[MyView alloc] initWithFrame:CGRectMake(10, 500, 300, 50)];
+    _myView = [[MyView alloc] initWithFrame:CGRectMake(10, 415, 300, 50)];
     [_myView setLabelText:@"Name"];
     [self.view addSubview:_myView];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(printMyViewText) name:UIKeyboardDidHideNotification object:nil];
     // Do any additional setup after loading the view.
     
-    MyButton *button4 = [MyButton myButtonWithFrame:CGRectMake(10, 550, 200, 120) title:@"move ball" imageName:@"archery.gif"];
+    MyButton *button4 = [MyButton myButtonWithFrame:CGRectMake(10, 470, 200, 120) title:@"move ball" imageName:@"archery.gif"];
     [self.view addSubview:button4];
     [button4 addTarget:self action:@selector(openToMoveBall) forControlEvents:UIControlEventTouchUpInside];
     
-    MyButton *btnOpenImage = [MyButton myButtonWithFrame:CGRectMake(220, 50, 150, 120) title:@"Open Image" imageName:@"archery.gif"];
+    MyButton *btnOpenImage = [MyButton myButtonWithFrame:CGRectMake(220, 10, 150, 120) title:@"Open Image" imageName:@"archery.gif"];
     [self.view addSubview:btnOpenImage];
     [btnOpenImage addTarget:self action:@selector(openImage) forControlEvents:UIControlEventTouchUpInside];
     
-    MyButton *btnOpenSegmentView = [MyButton myButtonWithFrame:CGRectMake(220, 200, 150, 120) title:@"Seg" imageName:@"archery.gif"];
+    MyButton *btnOpenSegmentView = [MyButton myButtonWithFrame:CGRectMake(220, 150, 150, 120) title:@"Seg" imageName:@"archery.gif"];
     [self.view addSubview:btnOpenSegmentView];
     [btnOpenSegmentView addTarget:self action:@selector(openSegmentView) forControlEvents:UIControlEventTouchUpInside];
     
-    MyButton *btnOpenScrollView = [MyButton myButtonWithFrame:CGRectMake(220, 350, 150, 120) title:@"scroll" imageName:@"archery.gif"];
+    MyButton *btnOpenScrollView = [MyButton myButtonWithFrame:CGRectMake(220, 290, 150, 120) title:@"scroll" imageName:@"archery.gif"];
     [self.view addSubview:btnOpenScrollView];
     [btnOpenScrollView addTarget:self action:@selector(openScrollView) forControlEvents:UIControlEventTouchUpInside];
 }
